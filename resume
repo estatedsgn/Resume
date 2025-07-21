@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Никита Якушев - Системный аналитик / Product Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #0ea5e9;
+            --light: #f3f4f6;
+            --dark: #1f2937;
+            --text: #374151;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9fafb;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Main Content Styles */
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 1.2rem 0 0.5rem;
+        }
+        
+        .goal {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            background-color: #eff6ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li:before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block;
+            width: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .date {
+            color: #6b7280;
+            font-style: italic;
+        }
+        
+        .achievements {
+            list-style-type: none;
+            margin-top: 1rem;
+        }
+        
+        .achievements li {
+            padding: 0.3rem 0;
+            display: flex;
+        }
+        
+        .achievements li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.8rem;
+        }
+        
+        /* Education Section */
+        .education-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Additional Info */
+        .qualities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .quality-card {
+            background: #f9fafb;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        /* Portfolio Section */
+        .portfolio-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn i {
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Никита Александрович Якушев</h1>
+                <p class="title">Системный аналитик / Product Manager</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+7 (985) 050-07-56</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>neyakushev1@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Москва</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/estatedsgn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Цель -->
+        <section>
+            <h2><i class="fas fa-bullseye"></i> Цель</h2>
+            <p class="goal">Получение стажировки в программе SberSeasons 2025 на позицию системного аналитика или Product-manager с возможностью применения технических и бизнес-навыков в развитии цифровых банковских продуктов.</p>
+        </section>
+
+        <!-- Ключевые навыки -->
+        <section>
+            <h2><i class="fas fa-code"></i> Ключевые навыки и технологии</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Системный анализ и моделирование</h3>
+                    <ul class="skill-list">
+                        <li>UML (Use Case диаграммы, диаграммы классов)</li>
+                        <li>BPMN (моделирование бизнес-процессов)</li>
+                        <li>Enterprise Architect (проектирование архитектуры)</li>
+                        <li>Составление функциональных и нефункциональных требований</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Технические навыки</h3>
+                    <ul class="skill-list">
+                        <li>Языки программирования: Java, Python, SQL</li>
+                        <li>Системы контроля версий: Git, GitHub</li>
+                        <li>Базы данных: опыт работы с SQL-запросами</li>
+                        <li>API: понимание принципов интеграции систем</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Продуктовые и аналитические навыки</h3>
+                    <ul class="skill-list">
+                        <li>Анализ продуктовых метрик и KPI</li>
+                        <li>Принятие продуктовых решений на основе данных</li>
+                        <li>Управление проектами и командами</li>
+                        <li>Бюджетирование и финансовое планирование</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Дополнительные навыки</h3>
+                    <ul class="skill-list">
+                        <li>Английский язык: B1 (Intermediate)</li>
+                        <li>Опыт работы с большими объемами данных</li>
+                        <li>Навыки презентации и коммуникации</li>
+                        <li>Готовность к релокации и гибридному формату работы</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Опыт работы -->
+        <section>
+            <h2><i class="fas fa-briefcase"></i> Опыт работы</h2>
+            
+            <div class="experience-item">
+                <h3>Основатель и Product-manager бренда одежды</h3>
+                <p class="company">Собственный проект | Москва</p>
+                <p class="date">2020–2022</p>
+                <p><em>Направление деятельности: разработка, производство и дистрибуция одежды</em></p>
+                
+                <h4>Ключевые достижения:</h4>
+                <ul class="achievements">
+                    <li>Создал бренд с нуля и достиг выручки свыше 15 млн ₽ за 2 года</li>
+                    <li>Управлял полным циклом продукта: от концепции до продаж</li>
+                    <li>Принимал продуктовые решения на основе анализа продаж и метрик конверсии</li>
+                    <li>Выстроил процессы производства, логистики и дистрибуции</li>
+                    <li>Оптимизировал маркетинговые каналы</li>
+                    <li>Управлял бюджетом проекта и контролировал P&L</li>
+                </ul>
+                
+                <h4>Применимые навыки для банковской сферы:</h4>
+                <ul class="achievements">
+                    <li>Анализ пользовательского поведения и метрик</li>
+                    <li>Управление жизненным циклом продукта</li>
+                    <li>Принятие решений в условиях неопределенности</li>
+                    <li>Работа с финансовыми показателями и бюджетированием</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Руководитель проектов и организатор мероприятий</h3>
+                <p class="company">Event-менеджмент | Москва</p>
+                <p class="date">2020–2022</p>
+                <p><em>Направление деятельности: организация корпоративных и массовых мероприятий</em></p>
+                
+                <h4>Ключевые достижения:</h4>
+                <ul class="achievements">
+                    <li>Организовал более 10 мероприятий, включая события на 2000+ участников</li>
+                    <li>Руководил кросс-функциональными командами</li>
+                    <li>Управлял бюджетами мероприятий</li>
+                    <li>Сократил время планирования мероприятий за счет оптимизации процессов</li>
+                    <li>Выстроил партнерские отношения с поставщиками и подрядчиками</li>
+                    <li>Обеспечил выполнение всех проектов в срок и в рамках бюджета</li>
+                </ul>
+                
+                <h4>Применимые навыки для банковской сферы:</h4>
+                <ul class="achievements">
+                    <li>Управление проектами и соблюдение дедлайнов</li>
+                    <li>Координация работы различных департаментов</li>
+                    <li>Управление рисками и планирование</li>
+                    <li>Работа с бюджетами и контроль расходов</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Образование -->
+        <section>
+            <h2><i class="fas fa-graduation-cap"></i> Образование</h2>
+            <div class="education-item">
+                <h3>НИЯУ МИФИ (Национальный исследовательский ядерный университет «МИФИ»)</h3>
+                <p><strong>Бакалавриат, 4 курс, бюджет</strong></p>
+                <ul class="achievements">
+                    <li>Факультет: Бизнес-информатики и управления комплексными системами</li>
+                    <li>Направление: Системный анализ и управление</li>
+                    <li>Форма обучения: Очная, бюджет</li>
+                    <li>Релевантные дисциплины: Системный анализ, Управление проектами, Бизнес-процессы, Информационные системы</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Проекты и достижения -->
+        <section>
+            <h2><i class="fas fa-trophy"></i> Проекты и достижения</h2>
+            <ul class="achievements">
+                <li>Создание бизнеса с нуля до выручки 15+ млн ₽</li>
+                <li>Опыт масштабирования команды и процессов</li>
+                <li>Управление P&L и финансовым планированием</li>
+            </ul>
+        </section>
+
+        <!-- Дополнительная информация -->
+        <section>
+            <h2><i class="fas fa-user"></i> Дополнительная информация</h2>
+            
+            <h3>Профессиональные интересы</h3>
+            <ul class="achievements">
+                <li>Цифровые банковские продукты и финтех-решения</li>
+                <li>Бизнес-аналитика и data-driven подход к принятию решений</li>
+                <li>UX/UI и пользовательский опыт в финансовых сервисах</li>
+                <li>Стартап-экосистема и инновационные продукты</li>
+            </ul>
+            
+            <h3>Личные качества</h3>
+            <div class="qualities-grid">
+                <div class="quality-card">
+                    <h4>Быстрая обучаемость</h4>
+                    <p>Освоил Enterprise Architect за 2 месяца самостоятельно</p>
+                </div>
+                <div class="quality-card">
+                    <h4>Ответственность за результат</h4>
+                    <p>Все проекты завершены успешно и в срок</p>
+                </div>
+                <div class="quality-card">
+                    <h4>Системное мышление</h4>
+                    <p>Способность видеть связи между процессами и их влияние на бизнес</p>
+                </div>
+                <div class="quality-card">
+                    <h4>Адаптивность</h4>
+                    <p>Готов работать в динамичной среде банковской IT</p>
+                </div>
+            </div>
+            
+            <h3>Готовность к работе</h3>
+            <ul class="achievements">
+                <li>Формат: готов к полной занятости (20+ часов в неделю для стажировки)</li>
+                <li>Локация: Москва, готов к работе в офисе или гибридном формате</li>
+                <li>Начало работы: немедленно после завершения отбора</li>
+            </ul>
+        </section>
+
+        <!-- Портфолио -->
+        <section>
+            <h2><i class="fas fa-folder-open"></i> Портфолио и рекомендации</h2>
+            <p>Готов предоставить:</p>
+            <ul class="achievements">
+                <li>Образцы UML-диаграмм, BPMN-схем и проектной документации</li>
+                <li>GitHub: примеры кода и технических проектов</li>
+                <li>Рекомендации: доступны от преподавателей МИФИ и бизнес-партнеров</li>
+            </ul>
+            
+            <div class="portfolio-links">
+                <a href="https://github.com/estatedsgn" class="btn" target="_blank">
+                    <i class="fab fa-github"></i> GitHub профиль
+                </a>
+                <a href="#" class="btn">
+                    <i class="fas fa-download"></i> Скачать резюме (PDF)
+                </a>
+                <a href="#" class="btn">
+                    <i class="fas fa-envelope"></i> Запросить рекомендации
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Никита Якушев | Системный аналитик / Product Manager</p>
+            <div class="contact-info" style="margin-top: 1rem; justify-content: center;">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+7 (985) 050-07-56</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>neyakushev1@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
